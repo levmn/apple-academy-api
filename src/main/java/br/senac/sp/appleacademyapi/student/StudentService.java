@@ -6,9 +6,7 @@ import java.util.UUID;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import br.senac.sp.appleacademyapi.mentor.MentorResponse;
 import br.senac.sp.appleacademyapi.security.AuthUserRepository;
-import jakarta.validation.Valid;
 
 @Service
 public class StudentService {

@@ -22,16 +22,16 @@ public class AuthService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //System.out.println("auth service finding..." + username);
-         AuthUser authUser = authUserRepository.findByEmail(username)
-                 .orElseThrow(() -> new UsernameNotFoundException("Auth User not found"));
-        
-         Mentor mentor = mentorRepository.findById(authUser.getReferenceId())
-                 .orElseThrow(() -> new UsernameNotFoundException("Mentor User not found"));
+        AuthUser authUser = authUserRepository.findByEmail(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Auth User not found"));
 
-         authUser.setName(mentor.getName());
-         authUser.setAvatarPath(mentor.getAvatarPath());
+        Mentor mentor = mentorRepository.findById(authUser.getReferenceId())
+                .orElseThrow(() -> new UsernameNotFoundException("Mentor User not found"));
+
+        authUser.setName(mentor.getName());
+        authUser.setAvatarPath(mentor.getAvatarPath());
 
         return authUser;
     }
-    
+
 }

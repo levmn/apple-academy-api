@@ -1,7 +1,6 @@
 package br.senac.sp.appleacademyapi.exception;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
